@@ -5,7 +5,7 @@ vowel = ['a', 'e', 'i', 'o', 'u']
 consonant = ['b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'n', 'q', 's', 't', 'v',
              'x', 'z', 'h', 'r', 'w', 'y']
 vowel_consonant = vowel + consonant
-surname_prefix = ['Mac', 'Mc', 'O\'', 'Ur-', 'al-', 'ibn ']
+surname_prefix = ['Mac', 'Mc', 'O\'', 'Ur-', 'al-', 'ibn ', 'van ', 'd\'']
 surname_suffix = ['son', 'sson']
 
 
@@ -28,6 +28,24 @@ def name_generator(parts_list):
         generated_name.append(random.choice(parts_list))
         j += 1
 
+    generated_name: str = ' '.join(generated_name)
+    generated_name = generated_name.replace(' ', '')
+
+    print(f'first generated {generated_name}')
+    generated_name = list(generated_name)
+    print(f'second generated {generated_name}')
+
+
+    if random.randint(0, 1) == 1:
+        print(generated_name)
+        generated_name.pop(-1)
+        print(generated_name)
+        generated_name = generated_name + ['a']
+        print(generated_name)
+
+    else:
+        generated_name
+
     yes_or_no = ['yes', 'no']
     cut_name = random.choice(yes_or_no)
 
@@ -41,9 +59,16 @@ def name_generator(parts_list):
         generated_name = list(generated_name)
         generated_name.pop(random.randrange(len(generated_name)))
 
+
+
+
+
+
     name_out: str = ' '.join(generated_name)
     name_out = name_out.replace(' ', '')
     name_out = name_out.capitalize()
+
+
     return name_out
 
 
