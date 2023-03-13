@@ -1,5 +1,6 @@
 import random
 
+
 vowel = ['a', 'e', 'i', 'o', 'u']
 consonant = ['b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'n', 'q', 's', 't', 'v',
              'x', 'z', 'h', 'r', 'w', 'y']
@@ -31,6 +32,24 @@ def name_generator(parts_list):
     for j in range(0, name_length):
         generated_name.append(random.choice(parts_list))
         j += 1
+
+    generated_name: str = ' '.join(generated_name)
+    generated_name = generated_name.replace(' ', '')
+
+    print(f'first generated {generated_name}')
+    generated_name = list(generated_name)
+    print(f'second generated {generated_name}')
+
+
+    if random.randint(0, 1) == 1:
+        print(generated_name)
+        generated_name.pop(-1)
+        print(generated_name)
+        generated_name = generated_name + ['a']
+        print(generated_name)
+
+    else:
+        generated_name
 
     yes_or_no = ['yes', 'no']
     cut_name = random.choice(yes_or_no)
@@ -108,17 +127,20 @@ def surname_generator(parts_list):
     return surname_out
 
 
+def fem_check(name):
+    if name[-1] == 'a':
+        return 'Lady'
+    else:
+        return 'Sir'
+
+
 def land_maker():
     description = ['Silver', 'Dark', 'Moon', 'Green', 'Shadowy', 'Deep', 'Frozen', 'Fiery', 'Boring', 'Old']
     place = ['mine', 'forest', 'lake', 'mountain', 'town', 'tower', 'graveyard', 'swamps']
     land = random.choice(description) + random.choice(place)
     return land
 
-def fem_check(name):
-    if name[-1] == 'a':
-        return 'Lady'
-    else:
-        return 'Sir'
+
 
 def main():
     parts_list = parts_generator()
