@@ -1,11 +1,11 @@
 import random
 
-
 vowel = ['a', 'e', 'i', 'o', 'u']
 consonant = ['b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'n', 'q', 's', 't', 'v',
              'x', 'z', 'h', 'r', 'w', 'y']
 vowel_consonant = vowel + consonant
-surname_prefix = ['Mac', 'Mc', 'O\'', 'Ur-', 'al-', 'ibn ']
+
+surname_prefix = ['Mac', 'Mc', 'O\'', 'al-', 'ibn ']
 surname_suffix = ['son', 'sson']
 
 
@@ -19,6 +19,10 @@ def parts_generator():
             vcv_list.append(cv)
     return vcv_list
 
+def female_male():
+    guest_answ = input("Female or male name (F/M)")
+    guest_answ = guest_answ.capitalize()
+    return guest_answ
 
 def name_generator(parts_list):
     generated_name = []
@@ -40,11 +44,21 @@ def name_generator(parts_list):
     elif cut_name == 'yes' and name_length != 1:
         generated_name = list(generated_name)
         generated_name.pop(random.randrange(len(generated_name)))
+        print(generated_name)
+        ln = len(generated_name)
+        print(ln)
 
     name_out: str = ' '.join(generated_name)
     name_out = name_out.replace(' ', '')
     name_out = name_out.capitalize()
     return name_out
+
+def female_name(name):
+    if name[-1] == 'a':
+        fem_name = name
+    else:
+        fem_name = name + 'a'
+    return fem_name
 
 
 def surname_generator(parts_list):
@@ -94,18 +108,17 @@ def surname_generator(parts_list):
     return surname_out
 
 
-def fem_check(name):
-    if name[-1] == 'a':
-        return 'Lady'
-    else:
-        return 'Sir'
-
-
 def land_maker():
     description = ['Silver', 'Dark', 'Moon', 'Green', 'Shadowy', 'Deep', 'Frozen', 'Fiery', 'Boring', 'Old']
     place = ['mine', 'forest', 'lake', 'mountain', 'town', 'tower', 'graveyard', 'swamps']
     land = random.choice(description) + random.choice(place)
     return land
+
+def fem_check(name):
+    if name[-1] == 'a':
+        return 'Lady'
+    else:
+        return 'Sir'
 
 def main():
     parts_list = parts_generator()
