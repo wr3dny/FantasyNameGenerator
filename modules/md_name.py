@@ -1,4 +1,4 @@
-from modules.module_parts import parts_generator, vowel_consonant
+from modules.md_parts import parts_generator, vowel_consonant
 import random
 
 

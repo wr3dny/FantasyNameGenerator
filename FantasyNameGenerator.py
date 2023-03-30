@@ -1,5 +1,5 @@
 import random
-from modules.module_parts import parts_generator
+from modules.md_parts import parts_generator
 
 vowel = ['a', 'e', 'i', 'o', 'u']
 consonant = ['b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'n', 'q', 's', 't', 'v',
