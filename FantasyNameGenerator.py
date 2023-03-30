@@ -1,24 +1,12 @@
 import random
-
+from modules.module_parts import parts_generator
 
 vowel = ['a', 'e', 'i', 'o', 'u']
 consonant = ['b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'n', 'q', 's', 't', 'v',
              'x', 'z', 'h', 'r', 'w', 'y']
 vowel_consonant = vowel + consonant
-
 surname_prefix = ['Mac', 'Mc', 'O\'', 'al-', 'ibn ']
 surname_suffix = ['son', 'sson']
-
-
-def parts_generator():
-    vcv_list = []
-    for v in vowel:
-        for c in consonant:
-            vc = v + c
-            cv = c + v
-            vcv_list.append(vc)
-            vcv_list.append(cv)
-    return vcv_list
 
 def female_male():
     guest_answ = input("Female or male name (F/M)")
@@ -97,8 +85,8 @@ def surname_generator(parts_list):
     if prefix_yes_no == 'yes':
         prefix = random.choice(surname_prefix)
         surname_out = prefix + surname_out
-    else:
-        surname_out
+    # else:
+    #     surname_out
 
     sufix_choice = ['no', 'yes']
     sufix_yes_no = random.choice(sufix_choice)
@@ -121,8 +109,8 @@ def surname_generator(parts_list):
             surname_out = surname_out + 'sson'
         else:
             surname_out = surname_out + 'son'
-    else:
-        surname_out
+    # else:
+    #     surname_out
 
     return surname_out
 
@@ -135,11 +123,10 @@ def fem_check(name):
 
 
 def land_maker():
-    description = ['Silver', 'Dark', 'Moon', 'Green', 'Shadowy', 'Deep', 'Frozen', 'Fiery', 'Boring', 'Old']
-    place = ['mine', 'forest', 'lake', 'mountain', 'town', 'tower', 'graveyard', 'swamps']
+    description = ['Silver', 'Dark', 'Moon', 'Green', 'Shadow', 'Deep', 'Frozen', 'Fiery', 'Boring', 'Old', 'Sun', 'Gloomy']
+    place = ['mine', 'forest', 'lake', 'mountain', 'town', 'tower', 'graveyard', 'swamps', 'caves']
     land = random.choice(description) + random.choice(place)
     return land
-
 
 
 def main():
