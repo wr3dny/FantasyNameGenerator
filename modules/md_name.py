@@ -8,25 +8,33 @@ female = 'female'
 # def name_generator(parts_list, sex):
 #     female_q = str(sex)
 generated_name = []
-name_ln = random.randint(2, 5)
+name_ln = random.randint(2, 4)
 
-print(name_ln)
 for i in range(0, name_ln):
     generated_name.append(random.choice(mixed))
     i += 1
 
     print(generated_name)
-# if female_q == 'female':
 
-generated_name[-1] = 'a'
+
 generated_name: str = ' '.join(generated_name)
 generated_name = generated_name.replace(' ', '')
 generated_name = generated_name.capitalize()
+generated_name = list(generated_name)
 
+if female == 'female':
+    generated_name[-1] = 'a'
 
+print(generated_name)
 
-if generated_name[-1] == generated_name[-2]:
-    print("Double aa")
+ln = len(generated_name)
+
+for x in range(2, ln):
+    if generated_name[x] == generated_name[x - 1]:
+        generated_name.remove(generated_name[x])
+
+# if generated_name[-1] == generated_name[-2]:
+#     print("Double aa")
 
 
 print(generated_name)
