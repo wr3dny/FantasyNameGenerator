@@ -1,5 +1,5 @@
 import random
-
+from modules.module_parts import parts_generator
 
 vowel = ['a', 'e', 'i', 'o', 'u']
 consonant = ['b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'n', 'q', 's', 't', 'v',
@@ -7,17 +7,6 @@ consonant = ['b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'n', 'q', 's', 't', 'v
 vowel_consonant = vowel + consonant
 surname_prefix = ['Mac', 'Mc', 'O\'', 'al-', 'ibn ']
 surname_suffix = ['son', 'sson']
-
-
-# def parts_generator():
-#     vcv_list = []
-#     for v in vowel:
-#         for c in consonant:
-#             vc = v + c
-#             cv = c + v
-#             vcv_list.append(vc)
-#             vcv_list.append(cv)
-#     return vcv_list
 
 def female_male():
     guest_answ = input("Female or male name (F/M)")
