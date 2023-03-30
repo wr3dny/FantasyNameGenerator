@@ -1,9 +1,41 @@
 from modules.md_parts import parts_generator, vowel_consonant
 import random
 
+mixed = parts_generator()
 
-def name_generator(parts_list):
-    name_ln = random.randint(1, 5)
+female = 'female'
+
+# def name_generator(parts_list, sex):
+#     female_q = str(sex)
+generated_name = []
+name_ln = random.randint(2, 5)
+
+print(name_ln)
+for i in range(0, name_ln):
+    generated_name.append(random.choice(mixed))
+    i += 1
+
+    print(generated_name)
+# if female_q == 'female':
+
+generated_name[-1] = 'a'
+generated_name: str = ' '.join(generated_name)
+generated_name = generated_name.replace(' ', '')
+generated_name = generated_name.capitalize()
+
+
+
+if generated_name[-1] == generated_name[-2]:
+    print("Double aa")
+
+
+print(generated_name)
+
+
+
+    # return generated_name
+
+
 
 
 
@@ -55,4 +87,3 @@ def name_generator(parts_list):
     # return name_out
 
 
-print(name_generator(parts_generator()))
