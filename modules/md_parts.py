@@ -4,8 +4,6 @@ consonant = ['b', 'c', 'd', 'f', 'g', 'j', 'k', 'l', 'm', 'n', 'q', 's', 't', 'v
 vowel_consonant = vowel + consonant
 
 
-
-
 def parts_generator():
     vcv_list = []
     for v in vowel:
@@ -15,5 +13,8 @@ def parts_generator():
             vcv_list.append(vc)
             vcv_list.append(cv)
     return vcv_list
+
+
+
 
 

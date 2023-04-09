@@ -38,7 +38,7 @@ for x in range(2, ln):
 
 
 print(generated_name)
-
+print(f'generated name {generated_name}')
 
 
     # return generated_name
