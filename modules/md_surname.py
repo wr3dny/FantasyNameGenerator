@@ -1,5 +1,4 @@
 import random
-from md_parts import vowel_consonant, parts_generator
 surname_prefix = ['Mac', 'Mc', 'O\'', 'al-', 'ibn ']
 
 
@@ -27,7 +26,6 @@ def surname_generator(parts_list):
             surname_out = prefix + surname_out
         case ['suffix']:
             surname_out = surname_out + 'son'
-            print('case suffix')
         case ['double']:
             generated_surname2 = []
             surname_length = random.randint(2, 3)
@@ -48,7 +46,10 @@ def surname_generator(parts_list):
                 generated_surname2.append(random.choice(parts_list))
                 k += 1
 
-            surname_out = surname_out + '-' + ' '.join(generated_surname2)
+            surname_out2: str = ' '.join(generated_surname2)
+            surname_out2 = surname_out2.replace(' ', '')
+            surname_out2 = surname_out2.capitalize()
+            surname_out = surname_out + '-' + surname_out2
             surname_out = prefix + surname_out
         case ['double + suffix']:
             generated_surname2 = []

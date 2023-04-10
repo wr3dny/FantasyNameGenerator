@@ -1,2 +1,5 @@
-Started as part of 'hackaton' (in smaller size) and right now it's my hooby project.
-2023/03/30 - spliting big file to smaller for easier handling.
+Fantasy Name Generator
+
+Started as short exercise from course, now it's my hobby project.
+
+v1.0.0 - 2023-04-10
